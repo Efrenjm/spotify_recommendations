@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
- * {
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); */
+ /* * {
     font-family: ubuntu;
-}
+} */
 p,h1,h2,h3,h4,h5{
   padding: 0;
   margin: 0;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ubuntu;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 

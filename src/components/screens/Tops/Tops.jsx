@@ -1,8 +1,4 @@
-
-// import TrackContainer from './components/molecules/ElementContainer/ElementContainer'
 import ElementsTable from '../../template/ElementsTable/ElementsTable'
-// import ElementsTable from './components/template/ElementsTable/ElementsTable'
-// import TrackContainer from './components/molecules/ElementContainer/ElementContainer'
 
 function Tops() {
   // const [count, setCount] = useState(0)
@@ -143,42 +139,7 @@ function Tops() {
     <>
         <h1>This is the page for Tops</h1>
       <ElementsTable tracks={tracks}></ElementsTable>
-    {/* {
-      tracks.map((track)=>{
-        return <TrackContainer trackId={track.id}
-                                imgSrc={track.album.images[2].url}
-                                title={track.name}
-                                artist={track.artists[0].name}>
-              </TrackContainer>
-      })
-    } */}
-      {/* <ElementsTable>
 
-      </ElementsTable> */}
-      {/* <TrackContainer imgSrc="https://picsum.photos/42/42"
-                      title="Nombre de canción muy larga con más palabras"
-                      artist="Nombre de artista"
-      ></TrackContainer> */}
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
     </>
   )
 }

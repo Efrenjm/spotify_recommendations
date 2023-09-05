@@ -1,7 +1,17 @@
+import { generateCodeVerifier } from "../../api/Authorize"
+import { Title } from "../../atoms/Text/Text"
 
-function Landing() {
+const Landing = ()=>{
   return (
-    <div>Landing</div>
+    <div style={{
+      display : 'flex',
+      flexDirection : 'column',
+      gap : '50px'
+    }}>
+      <Title> Spotify Recommendations </Title>
+      <button onClick={ generateCodeVerifier }> button to redirect</button>
+      
+    </div>
   )
 }
 
