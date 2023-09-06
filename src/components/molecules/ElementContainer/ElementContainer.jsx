@@ -1,57 +1,50 @@
 // import './ElementContainer.css'
-import { CardTitle, CardText } from "../../atoms/Text/Text"
-import { useState } from "react";
+import { CardText, CardTitle } from '../../atoms/Text/Text';
 
 // import "./ElementContainer.css"
 
-function TrackContainer({id, imgSrc, title, subtitle}) {
+function TrackContainer({id, imgSrc, title, subtitle, index}) {
   const cardWidth = 300;
   const xGap = 10;
   const imgDim = 42;
-  const textWidth = cardWidth - xGap*1.5 - imgDim;
+  const textWidth = cardWidth - xGap*4 - imgDim;
 
   const trackKeyframe = `slideTrack${id}`
 
   return (
     <div style={{
-      "display": "flex",
-      "flex-direction": "row",
-      "height": "60px",
-      "width": cardWidth,
-      "alignItems" : "center",
-      "padding" : `0 ${xGap}px`,
-      "gap" : xGap,
-      // "overflow-x" : "hidden",
-      "background-color":"var(--green)",
-      "border-radius": "10px"
+      display: 'flex',
+      flexDirection: 'row',
+      height: 'var(--card-height)',
+      widt: 'var(--card-width)',
+      alignItems : 'center',
+      padding : `0 ${xGap}px`,
+      gap : xGap,
+      backgroundColor:'var(--green)',
+      borderRadius: '12px'
     }}>
+      <h2 style={{
+        width : '2rem',
+        textAlign : 'center',
+      }}>{index+1}</h2>
       <img src={imgSrc}
           height={imgDim} 
-          width={imgDim}
-          style={{
-            "border-radius" : "100%"
-          }}/>
+          width={imgDim}/>
       <div style={{
-        "display" : "flex",
-        "flex-direction" : "column",
-        "width" : textWidth,
-        "overflow-x" : "hidden"
-
+        display : 'flex',
+        flexDirection : 'column',
+        width : textWidth,
+        overflowX : 'hidden'
       }}>
 
-          <CardTitle className="elem" //width={textWidth}
-                      id = {id}
-                      
-          >
-            {title}
-          </CardTitle>
-          <CardText //width={textWidth}
-          >
-            {subtitle}
-          </CardText>
-
+        <CardTitle className='elem'
+                    id = {id}>
+          {title}
+        </CardTitle>
+        <CardText>
+          {subtitle}
+        </CardText>
       </div>
-
     </div>
   )
 }

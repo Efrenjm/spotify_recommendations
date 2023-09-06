@@ -2,41 +2,75 @@ import TrackContainer from "../../molecules/ElementContainer/ElementContainer";
 import { Title } from "../../atoms/Text/Text";
 
 function ElementsTable(props) {
-  const top = `Top ${props.tracks.length} Tracks`
-  return (
-    <>
-      <div style={{
-        "background-color" : "black",
-        "padding" : "20px",
-        "border-radius" : "20px"
-      }}>
+  const elem =  props.type //? 'tracks' : null
+                // props.artists ?? 'Artists'
+  if(elem){ 
+    const top = `Top ${props.elems.length} ${elem}`
+    // const subtitles = elem==='track' ?? props.elems.map((elem)=>{
+    //   for(){
+
+    //   }
+    // })
+    return (
+      <>
         <div style={{
-          "text-align" : "center",
-          "padding" : "20px 0",
-          // "margin" : "0"
+          backgroundColor: 'black',
+          padding : '2rem 1.5rem',
+          borderRadius : '20px',
         }}>
-          <Title>{top}</Title>
-        </div>
-        <div  style={{
-          "display" : "flex",
-          "flex-direction" : "column",
-          "gap" : "3px"
+          <div style={{
+            textAlign : 'center',
+            height: 'auto',
+            padding : '0 0 1rem 0',
+          }}>
+            <Title>{top}</Title>
+          </div>
+          <div  style={{
+            display : 'flex',
+            flexDirection : 'column',
+            gap : 'var(--tab-padding)',
+            height : 'var(--five-cards-height)',
+            overflow: 'auto',
+          }}>
+            {
+              // elem === 'Tracks' ?
+                props.elems.map((elem, index)=>{
+                  return (
+                    <div key = {elem.id}>
+                      <TrackContainer id = {elem.id}
+                                      imgSrc = {elem.image}
+                                      title = {elem.name}
+                                      // subtitle = {subtitle}
+                                      index = {index}/>
+                    </div>
+                  )
+                })
+                // : elem === 'Artists' ??
+                // props.elems.map((elem,index)=>{
+                //   return (
+                //     <div key={elem.id}>
+                //       <TrackContainer id = {elem.id}
+                //                       imgSrc = {elem.image}
+                //                       title = {elem.name}
+                //                       //subtitle = {elem.genres[0].name}
+                //                       index = {index}/>
 
-        }}>
-
-          {
-            props.tracks.map((track)=>{
-              return <TrackContainer  id = {track.id}
-                                      imgSrc = {track.album.images[2].url}
-                                      title = {track.name}
-                                      subtitle = {track.artists[0].name}>
-                      </TrackContainer>
-            })
-          }
+                //                       {/* let obj = {
+                //                         id : artist.id,
+                //                         name : artist.name,
+                //                         image : artist.images[0].url,
+                //                         genres : artist.genres,
+                //                         popularity : artist.popularit,
+                //                       };   */}
+                //     </div>
+                //   )
+                // })
+            }
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
 
 export default ElementsTable
