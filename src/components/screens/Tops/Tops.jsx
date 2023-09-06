@@ -1,25 +1,31 @@
-import ElementsTable from '../../template/ElementsTable/ElementsTable'
-import { useState } from 'react'
+import ElementsTable from '../../template/ElementsTable/ElementsTable';
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-function Tops() {
-  // const [count, setCount] = useState(0)
+import { LimitSelector, TermSelector } from '../../atoms/Buttons/Buttons';
+import './tops.css'
+import { getArtists, getTracks } from '../../api/GetData';
 
+
+
+const Tops = ()=>{
+  // const [count, setCount] = useState(0)
+  
   // const artists = [
-  //   {
-  //     external_urls: {spotify: "https://open.spotify.com/artist/2FXC3k01G6Gw61bmprjgqS"},
-  //     followers: {href: null, total: 0},
-  //     genres: ["irish singer-songwriter", "modern rock", "pop", "pov: indie"],
-  //     href: "https://api.spotify.com/v1/artists/2FXC3k01G6Gw61bmprjgqS",
-  //     id: "2FXC3k01G6Gw61bmprjgqS",
-  //     images: [{height: 640, url: "https://i.scdn.co/image/ab6761610000e5ebad85a585103dfc2f3439119a", width: 640}, {height: 320, url: "https://i.scdn.co/image/ab67616100005174ad85a585103dfc2f3439119a", width: 320}, {height: 160, url: "https://i.scdn.co/image/ab6761610000f178ad85a585103dfc2f3439119a", width: 160}],
-  //     name: "Hozier",
-  //     popularity: 81,
-  //     type: "artist",
-  //     uri: "spotify:artist:2FXC3k01G6Gw61bmprjgqS",
-  //   },
-  //   {
-  //     external_urls: {spotify: "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"},
-  //     followers: {href: null, total: 0},
+    //   {
+      //     external_urls: {spotify: "https://open.spotify.com/artist/2FXC3k01G6Gw61bmprjgqS"},
+      //     followers: {href: null, total: 0},
+      //     genres: ["irish singer-songwriter", "modern rock", "pop", "pov: indie"],
+      //     href: "https://api.spotify.com/v1/artists/2FXC3k01G6Gw61bmprjgqS",
+      //     id: "2FXC3k01G6Gw61bmprjgqS",
+      //     images: [{height: 640, url: "https://i.scdn.co/image/ab6761610000e5ebad85a585103dfc2f3439119a", width: 640}, {height: 320, url: "https://i.scdn.co/image/ab67616100005174ad85a585103dfc2f3439119a", width: 320}, {height: 160, url: "https://i.scdn.co/image/ab6761610000f178ad85a585103dfc2f3439119a", width: 160}],
+      //     name: "Hozier",
+      //     popularity: 81,
+      //     type: "artist",
+      //     uri: "spotify:artist:2FXC3k01G6Gw61bmprjgqS",
+      //   },
+      //   {
+        //     external_urls: {spotify: "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"},
+        //     followers: {href: null, total: 0},
   //     genres: ["garage rock", "modern rock", "permanent wave", "rock", "sheffield indie"],
   //     href: "https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH",
   //     id: "7Ln80lUS6He07XvHI8qqHH",
@@ -134,21 +140,48 @@ function Tops() {
   //     uri: "spotify:track:5iZxLtBUcoQPXSO2iDERp1",
   //   }
   // ]
+  const changeTerm = async (term)=>{
+    setTopTerm(term)
+    console.log('topTerm: ' + topTerm)
+    console.log('term ' + term)
+    const midArtists = await getArtists(term);
+    const midTracks = await getTracks(term);
+    setArtists(midArtists);
+    setTracks(midTracks);
+    // const tracks = await getTracks();
+    // const artists = await getArtists();
   
-  const [topLimit,setTopLimit] = useState(10);
+    
+  
+  }
 
   const data = useLoaderData();
-  const profile = data.profile;
-  const artists = data.artists;
-  const tracks = data.tracks
-
+  let profile = data.profile;
+  
+  const [artists,setArtists] = useState(data.artists);
+  const [tracks,setTracks] = useState(data.tracks);
+  
+  const [topLimit,setTopLimit] = useState(5);
+  const [topTerm,setTopTerm] = useState('short_term')
+  
   return (
-    <>
-        {/* <h1>This is the page for Tops</h1> */}
-      <ElementsTable type={'artists'} elems={tracks}></ElementsTable>
-      <ElementsTable type={'tracks'} elems={artists}></ElementsTable>
-    </>
+    <div id='topsBodyContainer'>
+      <div id='SelectorsContainer'>
+        <LimitSelector func={setTopLimit}/>
+        <TermSelector func={changeTerm}/>
+      </div>
+      <div id='topsBody'>
+        <div style={{width:'fit-content'}}>
+          <ElementsTable type={'tracks'} elems={tracks.slice(0,topLimit)}/>
+        </div>
+        <div style={{width:'fit-content'}}>
+          <ElementsTable type={'artists'} elems={artists.slice(0,topLimit)}/>
+        </div>
+      </div>
+    </div>
   )
 }
+
+// export default Tops
 
 export default Tops

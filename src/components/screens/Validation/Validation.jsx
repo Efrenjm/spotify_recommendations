@@ -1,8 +1,6 @@
 // import { tokenize } from "../../api/Authorize"
+import { Navigate, useLoaderData } from "react-router-dom"
 import { Title } from "../../atoms/Text/Text"
-import { tokenize } from "../../api/Authorize"
-import { useState } from "react"
-import { Navigate, useLoaderData, useParams } from "react-router-dom"
 
 const ValidateToken = ()=>{
   const token = useLoaderData();
@@ -39,4 +37,4 @@ function Validation() {
 }
 
 
-export  {ValidateToken, Validation}
+export { ValidateToken, Validation }

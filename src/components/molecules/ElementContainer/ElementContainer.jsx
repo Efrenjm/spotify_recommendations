@@ -3,13 +3,13 @@ import { CardText, CardTitle } from '../../atoms/Text/Text';
 
 // import "./ElementContainer.css"
 
-function TrackContainer({id, imgSrc, title, subtitle, index}) {
-  const cardWidth = 300;
+function ElementContainer({id, imgSrc, title, subtitle, index}) {
+  const cardWidth = 320;
   const xGap = 10;
   const imgDim = 42;
-  const textWidth = cardWidth - xGap*4 - imgDim;
+  const textWidth = cardWidth - xGap*1.5 - imgDim;
 
-  const trackKeyframe = `slideTrack${id}`
+  // const trackKeyframe = `slideTrack${id}`
 
   return (
     <div style={{
@@ -21,7 +21,7 @@ function TrackContainer({id, imgSrc, title, subtitle, index}) {
       padding : `0 ${xGap}px`,
       gap : xGap,
       backgroundColor:'var(--green)',
-      borderRadius: '12px'
+      borderRadius: '15px'
     }}>
       <h2 style={{
         width : '2rem',
@@ -49,4 +49,4 @@ function TrackContainer({id, imgSrc, title, subtitle, index}) {
   )
 }
 
-export default TrackContainer
+export default ElementContainer

@@ -1,21 +1,23 @@
 
-const CardText = ({className, width, children}) => {
+const CardText = ({children}) => {
   return (
-    <p className={className}
+    <p //className={className}
     style={{
       fontSize : '12px',
       margin : '0',
+      WebkitOverflowStyle : 'none',
+      whiteSpace: 'nowrap',
     }}>{children}</p>
   )
 }
 
-const CardTitle = ({className, width, children})=>{
+const CardTitle = ({children})=>{
   return (
-    <h2 className={className}
+    <h2 //className={className}
     style={{
       fontSize : '16px',
       margin : '0',
-      webkitOverflowStyle : 'none',
+      WebkitOverflowStyle : 'none',
       whiteSpace: 'nowrap',
     }}>{children}</h2>
   )
@@ -23,7 +25,12 @@ const CardTitle = ({className, width, children})=>{
 
 const Title = ({children})=>{
   return (
-      <h1>{children}</h1>
+      <h1 style={{
+        // position:'aboslute',
+        fontSize:'46px',
+        padding: '0',
+        marginBottom: '0'
+      }}>{children}</h1>
   )
 }
 const Subtitle = ({children})=>{

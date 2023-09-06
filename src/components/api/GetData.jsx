@@ -1,8 +1,8 @@
-import { refreshToken } from "./Authorize";
-const clientId = 'f98eaedadf68425b99738517ee1f45cd';
+// import { refreshToken } from "./Authorize";
+// const clientId = 'f98eaedadf68425b99738517ee1f45cd';
 const baseUri = 'https://api.spotify.com/v1/';
 
-const term = 'short_term'; //change for state
+const term = 'medium_term'; //change for state
 const limit = 50;
 
 
@@ -28,13 +28,17 @@ const getProfile = async ()=>{
   return { username, profPic, product }
 }
 
-const getArtists = async ()=>{
+const getArtists = async (term)=>{
+  console.log(term)
+  // const term = 'short_term'; //change for state
+  // const limit = 10;
   const token = localStorage.getItem('access_token');
   const auth = 'Bearer ' + token;
   const params = new URLSearchParams({
     time_range : term,
     limit : limit,
   });
+  console.log(params)
   const url = baseUri + 'me/top/artists?' + params;
 
   const response = await fetch(url,{ headers: { Authorization: auth }});
@@ -56,7 +60,7 @@ const getArtists = async ()=>{
   return artists;
 }
 
-const getTracks = async ()=>{
+const getTracks = async (term)=>{
   const token = localStorage.getItem('access_token');
   const auth = 'Bearer ' + token;
   const params = new URLSearchParams({
@@ -86,28 +90,14 @@ const getTracks = async ()=>{
   return tracks;
 }
 
-const getData = async ()=>{
-  // try{
+const getData = async ({term='short_term'})=>{
+  // console.log()
     const data = {
       profile : await getProfile(),
-      artists : await getArtists(),
-      tracks : await getTracks()
+      artists : await getArtists(term),
+      tracks : await getTracks(term)
     };
     return data
-  // }
-  // catch (e){
-  //   console.log(e)
-    // let data;
-    // refreshToken().then(async (token)=>{
-    //   data = {
-    //     profile : await getProfile(),
-    //     artists : await getArtists(),
-    //     tracks : await getTracks()
-    //   };
-    // })
-    // return data
-  // }
-  // return null
 }
 
-export default getData;
+export  {getData,getArtists,getTracks};

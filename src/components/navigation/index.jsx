@@ -4,7 +4,8 @@ import { tokenize, ValidateToken } from "../api/Authorize";
 import Invalid from "../screens/Invalid/Invalid";
 import Landing from "../screens/Landing/Landing";
 import Tops from "../screens/Tops/Tops";
-import getData from "../api/GetData";
+import { getData } from "../api/GetData";
+import { LimitSelector } from "../atoms/Buttons/Buttons";
 
 
 const router = createBrowserRouter([
@@ -24,12 +25,16 @@ const router = createBrowserRouter([
     path : "/tops",
     element : <Tops/>,
     loader : getData,
-    errorElement : <Invalid/>
+    // errorElement : <Invalid/>
   },
   {
     path:"/invalid",
     element: <Invalid/>
   },
+  {
+    path:"/testing",
+    element: <LimitSelector/>
+  }
 ])
 
 export default router
