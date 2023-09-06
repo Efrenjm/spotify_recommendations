@@ -1,11 +1,5 @@
 import PropTypes from 'prop-types'
-import "./buttons.css"
-
-// function Buttons() {
-//   return (
-//     <div>Buttons</div>
-//   )
-// }
+import "@atoms/Buttons/buttons.css"
 
 const LimitSelector = ({className,func})=>{
   return (

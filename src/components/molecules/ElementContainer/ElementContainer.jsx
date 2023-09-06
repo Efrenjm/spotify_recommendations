@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { CardText, CardTitle } from '../../atoms/Text/Text';
+import { CardText, CardTitle } from '@atoms/Text/Text';
 
 // import "./ElementContainer.css"
 
@@ -8,8 +8,6 @@ function ElementContainer({ imgSrc, title, subtitle, index}) {
   const xGap = 10;
   const imgDim = 42;
   const textWidth = cardWidth - xGap*1.5 - imgDim;
-
-  // const trackKeyframe = `slideTrack${id}`
 
   return (
     <div style={{

@@ -1,8 +1,6 @@
-// import { refreshToken } from "./Authorize";
-// const clientId = 'f98eaedadf68425b99738517ee1f45cd';
+
 const baseUri = 'https://api.spotify.com/v1/';
 
-// const term = 'medium_term'; //change for state
 const limit = 50;
 
 
@@ -29,9 +27,7 @@ const getProfile = async ()=>{
 }
 
 const getArtists = async (term='short_term')=>{
-  // console.log(term)
-  // const term = 'short_term'; //change for state
-  // const limit = 10;
+
   const token = localStorage.getItem('access_token');
   const auth = 'Bearer ' + token;
   const params = new URLSearchParams({
@@ -91,7 +87,7 @@ const getTracks = async (term)=>{
 }
 
 const getData = async ({term='short_term'})=>{
-  // console.log()
+
     const data = {
       profile : await getProfile(),
       artists : await getArtists(term),

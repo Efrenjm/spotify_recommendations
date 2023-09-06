@@ -1,5 +1,8 @@
+// import path from "path";s
+// path.resolve(__dirname,'')
+
 const clientId = 'f98eaedadf68425b99738517ee1f45cd';
-const url = 'http://localhost:4173/';
+const url = 'http://localhost:5173/';
 const redirect_uri = url + 'v';
 const scope = 'user-read-private user-read-email user-top-read';
 

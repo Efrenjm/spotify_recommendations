@@ -1,4 +1,4 @@
-import './header.css'
+import '@template/Header/header.css'
 
 function Header() {
   return (

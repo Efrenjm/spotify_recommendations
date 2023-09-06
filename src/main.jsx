@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import '@src/index.css'
 
 import { RouterProvider } from 'react-router-dom'
-import router from './components/navigation'
+import router from '@navigation'
 // import router from
 
 ReactDOM.createRoot(document.getElementById('root')).render(

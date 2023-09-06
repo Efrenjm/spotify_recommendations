@@ -1,6 +1,6 @@
 // import { tokenize } from "../../api/Authorize"
 import { Navigate, useLoaderData } from "react-router-dom"
-import { Title } from "../../atoms/Text/Text"
+import { Title } from "@atoms/Text/Text"
 
 const ValidateToken = ()=>{
   const token = useLoaderData();

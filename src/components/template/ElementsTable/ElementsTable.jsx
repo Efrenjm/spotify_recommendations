@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import ElementContainer from "../../molecules/ElementContainer/ElementContainer";
-import { Title } from "../../atoms/Text/Text";
+import ElementContainer from "@molecules/ElementContainer/ElementContainer";
+import { Title } from "@atoms/Text/Text";
 
 function ElementsTable(props) {
   const elem =  props.type 
@@ -33,7 +33,6 @@ function ElementsTable(props) {
             display: 'flex',
             flexDirection : 'row',
             justifyContent: 'space-between',
-            // gap:'1.5rem'
           }}>
             
             <div style={{

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getArtists, getTracks } from '../../api/GetData';
-import { LimitSelector, TermSelector } from '../../atoms/Buttons/Buttons';
-import ElementsTable from '../../template/ElementsTable/ElementsTable';
-import './tops.css';
+import { getArtists, getTracks } from '@api/GetData';
+import { LimitSelector, TermSelector } from '@atoms/Buttons/Buttons';
+import ElementsTable from '@template/ElementsTable/ElementsTable';
+import '@screens/Tops/tops.css';
 
 const Tops = ()=>{
 
@@ -16,7 +16,6 @@ const Tops = ()=>{
   }
 
   const data = useLoaderData();
-  // let profile = data.profile;
   
   const [artists,setArtists] = useState(data.artists);
   const [tracks,setTracks] = useState(data.tracks);

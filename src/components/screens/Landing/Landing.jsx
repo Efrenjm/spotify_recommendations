@@ -1,5 +1,7 @@
-import { generateCodeVerifier } from "../../api/Authorize"
-import { Title } from "../../atoms/Text/Text"
+
+import { generateCodeVerifier } from "@api/authFunctions"
+// import { generateCodeVerifier } from "@api/AuthFunctions"
+import { Title } from "@atoms/Text/Text"
 
 const Landing = ()=>{
   return (
