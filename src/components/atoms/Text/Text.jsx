@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const CardText = ({children}) => {
   return (
@@ -10,6 +11,7 @@ const CardText = ({children}) => {
     }}>{children}</p>
   )
 }
+CardText.propTypes={ children: PropTypes.string.isRequired }
 
 const CardTitle = ({children})=>{
   return (
@@ -22,7 +24,10 @@ const CardTitle = ({children})=>{
     }}>{children}</h2>
   )
 }
+CardTitle.propTypes={ children: PropTypes.string.isRequired }
 
+// CardTitle.defaultProps ={ children : null }
+// Button.defaultProps
 const Title = ({children})=>{
   return (
       <h1 style={{
@@ -33,11 +38,16 @@ const Title = ({children})=>{
       }}>{children}</h1>
   )
 }
+Title.propTypes={ children: PropTypes.string.isRequired }
+
+// Title.defaultProps ={ children : null }
+
 const Subtitle = ({children})=>{
   return(
     <h2>{children}</h2>
   )
 }
+Subtitle.propTypes={ children: PropTypes.string.isRequired }
 
 // export default Text
 export { CardText, CardTitle, Subtitle, Title }

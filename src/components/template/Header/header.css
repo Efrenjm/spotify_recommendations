@@ -1,0 +1,19 @@
+#HeaderContainer{
+    height:100px;
+    width:100vw;
+    background-color:green;
+
+}
+#headerNavigator{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+#headerNavigator li{
+    padding: 10px;
+
+}

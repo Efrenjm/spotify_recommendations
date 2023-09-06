@@ -1,9 +1,9 @@
-// import './ElementContainer.css'
+import PropTypes from 'prop-types'
 import { CardText, CardTitle } from '../../atoms/Text/Text';
 
 // import "./ElementContainer.css"
 
-function ElementContainer({id, imgSrc, title, subtitle, index}) {
+function ElementContainer({ imgSrc, title, subtitle, index}) {
   const cardWidth = 320;
   const xGap = 10;
   const imgDim = 42;
@@ -37,8 +37,7 @@ function ElementContainer({id, imgSrc, title, subtitle, index}) {
         overflowX : 'hidden'
       }}>
 
-        <CardTitle className='elem'
-                    id = {id}>
+        <CardTitle className='elem'>
           {title}
         </CardTitle>
         <CardText>
@@ -48,5 +47,14 @@ function ElementContainer({id, imgSrc, title, subtitle, index}) {
     </div>
   )
 }
+ElementContainer.propTypes={ 
+  children: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string, 
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string, 
+  index: PropTypes.number
+
+}
+
 
 export default ElementContainer

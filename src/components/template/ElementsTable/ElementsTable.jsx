@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import ElementContainer from "../../molecules/ElementContainer/ElementContainer";
 import { Title } from "../../atoms/Text/Text";
 
@@ -72,5 +73,12 @@ function ElementsTable(props) {
     )
   }
 }
+
+ElementsTable.propTypes = {
+  type: PropTypes.string,
+  elems: PropTypes.object.isRequired,
+
+}
+
 
 export default ElementsTable

@@ -1,19 +1,18 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import { tokenize, ValidateToken } from "../api/Authorize";
+import { ValidateToken } from "../api/Authorize";
+import { tokenize } from "../api/AuthFunctions";
 import { getData } from "../api/GetData";
-import { LimitSelector } from "../atoms/Buttons/Buttons";
 import Invalid from "../screens/Invalid/Invalid";
 import Landing from "../screens/Landing/Landing";
 import Tops from "../screens/Tops/Tops";
+import Header from "../template/Header/Header";
 
 
 const router = createBrowserRouter([
   {
     path : "/",
     element : <Landing/>
-
-      // <Route path="/login" element={user ? <Navigate to="/" replace /> :  <Login />}  />
   },
   {
     path : "/v",
@@ -33,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/testing",
-    element: <LimitSelector/>
+    element: <Header/>
   }
 ])
 

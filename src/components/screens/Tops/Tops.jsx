@@ -7,7 +7,7 @@ import './tops.css';
 
 const Tops = ()=>{
 
-  const changeTerm = async (term)=>{
+  const changeTerm = async (term='short_term')=>{
     const midArtists = await getArtists(term);
     const midTracks = await getTracks(term);
     setArtists(midArtists);
@@ -16,7 +16,7 @@ const Tops = ()=>{
   }
 
   const data = useLoaderData();
-  let profile = data.profile;
+  // let profile = data.profile;
   
   const [artists,setArtists] = useState(data.artists);
   const [tracks,setTracks] = useState(data.tracks);

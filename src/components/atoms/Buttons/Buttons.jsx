@@ -1,11 +1,11 @@
-
+import PropTypes from 'prop-types'
 import "./buttons.css"
 
-function Buttons() {
-  return (
-    <div>Buttons</div>
-  )
-}
+// function Buttons() {
+//   return (
+//     <div>Buttons</div>
+//   )
+// }
 
 const LimitSelector = ({className,func})=>{
   return (
@@ -24,6 +24,10 @@ const LimitSelector = ({className,func})=>{
     </div>
   )
 }
+LimitSelector.propTypes={
+  className: PropTypes.string.isRequired,
+  func: PropTypes.func.isRequired
+}
 
 const TermSelector =({className,func})=>{
   return (
@@ -40,6 +44,9 @@ const TermSelector =({className,func})=>{
     </div>
   )
 }
+TermSelector.propTypes={
+  className: PropTypes.string.isRequired,
+  func: PropTypes.func.isRequired
+}
 
-
-export {Buttons, LimitSelector, TermSelector}
+export { LimitSelector, TermSelector}

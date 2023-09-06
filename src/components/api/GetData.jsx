@@ -2,7 +2,7 @@
 // const clientId = 'f98eaedadf68425b99738517ee1f45cd';
 const baseUri = 'https://api.spotify.com/v1/';
 
-const term = 'medium_term'; //change for state
+// const term = 'medium_term'; //change for state
 const limit = 50;
 
 
@@ -28,8 +28,8 @@ const getProfile = async ()=>{
   return { username, profPic, product }
 }
 
-const getArtists = async (term)=>{
-  console.log(term)
+const getArtists = async (term='short_term')=>{
+  // console.log(term)
   // const term = 'short_term'; //change for state
   // const limit = 10;
   const token = localStorage.getItem('access_token');
