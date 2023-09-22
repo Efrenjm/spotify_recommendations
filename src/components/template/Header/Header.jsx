@@ -1,11 +1,9 @@
-import '@template/Header/header.css'
+import "@template/Header/header.css";
 
 function Header() {
   return (
-    <div id='HeaderContainer'>
-      <div>
-
-      </div>
+    <div id="HeaderContainer">
+      <div></div>
       <div>
         <nav>
           <ul id="headerNavigator">
@@ -16,7 +14,7 @@ function Header() {
         </nav>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

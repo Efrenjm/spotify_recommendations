@@ -1,9 +1,14 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); */
- /* * {
+/* * {
     font-family: ubuntu;
 } */
 
-p,h1,h2,h3,h4,h5{
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
   padding: 0;
   margin: 0;
 }
@@ -23,20 +28,18 @@ p,h1,h2,h3,h4,h5{
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-
   /* custom variables */
 
   /* Card variables  */
-  --green : #2f6065e6;
-  --card-height : 60px;
-  --card-width : 300px;
+  --green: #2f6065e6;
+  --card-height: 60px;
+  --card-width: 300px;
 
   /* Table variables  */
-  --tab-padding : 3px;
-  --row-height : calc(( var(--card-height) + var(--tab-padding) ));
-  --five-cards-height : calc( var(--row-height) * 5 );
-  --ten-cards-height : calc( var(--row-height) * 10 );
-
+  --tab-padding: 3px;
+  --row-height: calc((var(--card-height) + var(--tab-padding)));
+  --five-cards-height: calc(var(--row-height) * 5);
+  --ten-cards-height: calc(var(--row-height) * 10);
 }
 
 a {

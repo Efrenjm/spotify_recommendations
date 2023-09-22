@@ -1,8 +1,5 @@
-
 function Invalid() {
-  return (
-    <div>Invalid</div>
-  )
+  return <div>Invalid</div>;
 }
 
-export default Invalid
+export default Invalid;

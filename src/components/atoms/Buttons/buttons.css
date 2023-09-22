@@ -1,45 +1,45 @@
 /* .inputSelector{
     display: none;
 } */
-.inputSelector{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+.inputSelector {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 .inputSelector input[type="radio"] {
-    display: none;
-}      
+  display: none;
+}
 .inputSelector label {
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    background-color: none;
-    border-radius: 7rem;
-    height: 2rem;
-    font-weight: 400;
-    font-size: 18px;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  border-radius: 7rem;
+  height: 2rem;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
 }
-.limit-selector label{
-    width: 7rem;
-    border: 1px solid #23bb6a;
-    padding: 4px 11px;
+.limit-selector label {
+  width: 7rem;
+  border: 1px solid #23bb6a;
+  padding: 4px 11px;
 }
-.term-selector label{
-    width: 10rem;
-    border: 1px solid #dd9716;
-    padding: 4px 11px;
+.term-selector label {
+  width: 10rem;
+  border: 1px solid #dd9716;
+  padding: 4px 11px;
 }
-.limit-selector input[type="radio"]:checked+label {
-    font-weight: 800;
-    background-color: #23bb6a;
-    border: none;
+.limit-selector input[type="radio"]:checked + label {
+  font-weight: 800;
+  background-color: #23bb6a;
+  border: none;
 }
-.term-selector input[type="radio"]:checked+label {
-    font-weight: 800;
-    background-color: #dd9716;
-    border: none;
+.term-selector input[type="radio"]:checked + label {
+  font-weight: 800;
+  background-color: #dd9716;
+  border: none;
 }
-.inputSelector input[type="radio"]:hover+label {
-    font-weight: 600;
+.inputSelector input[type="radio"]:hover + label {
+  font-weight: 600;
 }
